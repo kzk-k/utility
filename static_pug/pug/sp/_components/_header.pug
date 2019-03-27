@@ -1,0 +1,13 @@
+header.l-header#l--header
+	.wrap
+		.wrap-l
+			a.logo(href="hhttps://www.google.com/")
+				img(src="http://placehold.it/226x61", width="226", height="61", alt="")
+			if pageName == 'top'
+				h1.ttl h1タイトル（トップページなど）
+			else
+				p.ttl pタイトル（下層ページなど）
+		.wrap-r
+			button.menu.js-navTrigger
+				span.menu-line
+				span.menu-text MENU

@@ -1,0 +1,33 @@
+block var
+doctype html
+html(lang="ja")
+	head
+		meta(charset="utf-8")
+		block title
+		block meta
+			mixin meta(metas)
+				meta(name="description", content=metas.description)
+				meta(name="keywords", content=metas.keywords)
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		meta(name="format-detection" content="telephone=no")
+		link(rel="shortcut icon" href="https://core-tech.jp/static/img/common/favicon.png" type="image/vnd.microsoft.icon")
+
+		block link
+			link(rel="stylesheet" href="style.css")
+	body
+		include /sp/_components/_header
+
+
+		main.l-mainContainer
+			include /sp/_components/_nav
+
+			block pagesContent
+			block End_pagesContent
+
+
+		include /sp/_components/_footer
+
+
+		script(src="/sp/common/js/jquery-3.3.1.min.js")
+		block script
+			script(src="script.js")

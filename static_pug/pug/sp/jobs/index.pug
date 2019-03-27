@@ -1,0 +1,94 @@
+extends /sp/_components/_template.pug
+
+
+block var
+	- metas = {}
+	- metas.pageName = 'トップ'
+	- metas.siteName = 'サイト名'
+	- metas.keywords = 'キーワード'
+	- metas.description = 'ディスクリプション'
+
+	- pageName = 'top'
+block append meta
+	+meta(metas)
+
+block title
+	title #{metas.pageName} | #{metas.siteName}
+block link
+	link(href="style.css", rel="stylesheet")
+
+
+
+
+block pagesContent
+	img(src="http://placehold.it/750x400.png", width="750", height="400", alt="")
+	.mod-info
+		.wrap
+			p.info-ttl info
+			.info-date 2019/04/01
+			.info-txt
+				p.marquee Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+
+	section.f-about
+		h2.ttl.u-mxa
+			img(src="http://placehold.it/300x100.png", width="300", height="100", alt="タイトル")
+		.body
+			ul.list
+				li.item
+					p.item-ttl タイトル
+					p.item-txt Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus praesentium et, laudantium obcaecati vel veritatis hic pariatur modi, quam, nemo doloribus cumque quas reprehenderit ab nisi saepe enim harum, vero!
+				li.item
+					p.item-ttl タイトル
+					p.item-txt Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, dolorem perspiciatis quos natus consequuntur, totam, asperiores eaque ratione facilis possimus fuga ducimus saepe, magni ipsum est. Itaque rem illum doloremque!
+				li.item
+					p.item-ttl タイトル
+					p.item-txt Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolor laborum, ex nam, qui libero deleniti. Voluptas, sequi. Ullam veritatis aut repellendus optio neque pariatur id voluptatibus numquam fuga quo.
+				li.item
+					p.item-ttl タイトル
+					p.item-txt Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias fugit corporis, veritatis aperiam maxime consequuntur! Beatae reiciendis dolor repellat maiores possimus voluptas nobis, cupiditate et, illum ea aliquid dolores consectetur.
+				li.item
+					p.item-ttl タイトル
+					p.item-txt Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti perferendis enim fuga reiciendis, exercitationem similique nam animi necessitatibus at. Delectus incidunt fuga vel blanditiis! Modi inventore veritatis cumque et magnam.
+				li.item
+					p.item-ttl タイトル
+					p.item-txt Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero numquam reiciendis sapiente hic assumenda, ipsum molestiae. Mollitia numquam laudantium neque libero harum autem, blanditiis explicabo inventore eveniet, obcaecati, amet omnis.
+
+
+	section.f-interview
+		h2.ttl.u-mxa
+			img(src="http://placehold.it/300x100.png", width="300", height="100", alt="タイトル")
+		.body
+			.swiper-container.js-swiper-interview-main
+				ul.list.swiper-wrapper
+					each item, index in interview
+						li.item.swiper-slide
+							a.item-anchor(href=staffUrl + item.num + "/")
+								img(class="swiper-lazy", src="http://placehold.it/710x440.png", width="710", height="440", alt=item.name)
+								.item-caption
+									.item-caption-name-ja= item.name
+									.item-caption-name-en= item.nameEn
+									.item-caption-role= item.role
+							a.btn-readMore(href=staffUrl + item.num + "/")
+								span.btn-readMore-txt.u-gradTxt Read more
+				.swiper-button-prev
+					img(src="img/interview/btn_prev.png", width="20", height="32", alt="前へ")
+				.swiper-button-next
+					img(src="img/interview/btn_next.png", width="20", height="32", alt="次へ")
+
+			.thumContainer
+				.swiper-container.js-swiper-interview-thum
+					ul.thumList.swiper-wrapper
+						each item, index in interview
+							li.thumList-item.swiper-slide
+								img(src="http://placehold.it/108x222.png", width="108", height="222", alt=item.name)
+
+	include /sp/_components/_btn_newentry
+	include /sp/_components/_btn_halfentry
+
+
+block script
+	script(src="/sp/common/js/swiper.min.js")
+	script(src="/sp/common/js/script.js")
+	script(src="script.js")
+block End_pagesContent

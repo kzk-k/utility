@@ -1,0 +1,76 @@
+-
+	var baseUrl = '/sp/jobs/'
+	var staffUrl = baseUrl + 'interview/staff'
+	var interview = [
+		{
+			num: 1,
+			name: 'てすとねーむ',
+			nameEn: 'testName',
+			role: '役職名',
+			detailSliderInRole: '役職名'
+		},
+		{
+			num: 2,
+			name: 'てすとねーむ',
+			nameEn: 'testName',
+			role: '役職名',
+			detailSliderInRole: '役職名'
+		},
+		{
+			num: 3,
+			name: 'てすとねーむ',
+			nameEn: 'testName',
+			role: '役職名',
+			detailSliderInRole: '役職名'
+		},
+		{
+			num: 4,
+			name: 'てすとねーむ',
+			nameEn: 'testName',
+			role: '役職名',
+			detailSliderInRole: '役職名'
+		},
+		{
+			num: 5,
+			name: 'てすとねーむ',
+			nameEn: 'testName',
+			role: '役職名',
+			detailSliderInRole: '役職名'
+		},
+		{
+			num: 6,
+			name: 'てすとねーむ',
+			nameEn: 'testName',
+			role: '役職名',
+			detailSliderInRole: '役職名'
+		}
+	]
+
+
+.overLay.js-overLay
+
+nav.l-nav.js-nav
+	.nav-head
+		p.nav-head-ttl MENU
+		a.nav-head-toTop(href=baseUrl) TOPへ
+	ul.list
+		li.item
+			a.item-anchor(href=baseUrl + "message/")
+				p.item-anchor-text-ja アンカー名
+				.item-anchor-text-en anchorName
+		li.item
+			a.item-anchor.item-interview-arr.js-accordion
+				p.item-anchor-text-ja アンカー名（アコーディオン）
+				.item-anchor-text-en anchorName
+			ul.list-interview
+				each item, index in interview
+					li.item-interview
+						a.item-anchor.item-anchor-interview(href=staffUrl + item.num + '/')
+							p.item-anchor-name= item.name
+							div.item-anchor-role= item.role
+	a.btn-newEntryInNav(href=baseUrl + "posts/newgraduate/")
+		span.btn-entryInNav-text ボタン
+	a.btn-halfEntryInNav(href=baseUrl + "posts/career/")
+		span.btn-entryInNav-text ボタン
+	button.btn-close.js-btn-closeNav
+		span.btn-close-text CLOSE
