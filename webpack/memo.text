@@ -1,0 +1,10 @@
+・package.jsonの準備
+npm init -y
+
+・現時点の最新のバージョン確認
+npm info webpack
+
+・開発環境でのみ使用する
+npm install --save-dev webpack@4.29.6
+
+・webpack-cliのインストール
