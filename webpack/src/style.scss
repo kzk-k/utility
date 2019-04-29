@@ -1,0 +1,13 @@
+$primary-color: #ff5733;
+
+#root {
+    &::after {
+        content: "SCSS";
+    }
+}
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $primary-color;
+}

@@ -1,10 +1,33 @@
-・package.jsonの準備
-npm init -y
-
-・現時点の最新のバージョン確認
-npm info webpack
-
-・開発環境でのみ使用する
-npm install --save-dev webpack@4.29.6
-
-・webpack-cliのインストール
+"lodash": 便利な書き方出来るやつ
+"react": 
+"react-dom": 
+"@babel/core": 
+"@babel/preset-env": 
+"@babel/preset-react": 
+"autoprefixer": ベンダープレフィックス
+"babel-eslint": 
+"babel-loader": 
+"css-loader": CSSファイルの依存関係の解決を行う処理を行う
+"eslint": 
+"eslint-config-airbnb": 
+"eslint-config-airbnb-base": 
+"eslint-loader": 
+"eslint-plugin-import": 
+"eslint-plugin-jsx-a11y": 
+"eslint-plugin-react": 
+"file-loader": imgタグの読み込み
+"html-loader":
+"html-webpack-plugin": ハッシュをつける（キャッシュされるから）
+"mini-css-extract-plugin": cssを別ファイルに書き出す
+"node-sass": 
+"optimize-css-assets-webpack-plugin": CSSの最適化\最小化
+"postcss-loader": "^3.0.0",
+"sass-loader": 
+"style-loader": 渡されたCSSの内容をStyleタグの形に変換して、さらにそれをHTML上にInjectするJSコードと一緒にBundleに渡す
+"stylus": stylus-loaderとセット
+"stylus-loader": 
+"uglifyjs-webpack-plugin": JSの最適化\最小化
+"url-loader": 画像の読み込み
+"webpack": 
+"webpack-cli": コマンドラインからwebpackコマンドを実行する為のパッケージ
+"webpack-dev-server": 開発用サーバー（HMRとか）
