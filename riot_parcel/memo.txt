@@ -1,0 +1,6 @@
+npm start
+・concurrentlyで並列実行してる
+（parcel ブラウザオープン, Riotタグ、index.html）
+
+・ app/ app/は間違いじゃない
+

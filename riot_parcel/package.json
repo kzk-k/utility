@@ -1,0 +1,23 @@
+{
+  "name": "crawler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "riot": "npx riot -w app/ app/tags.js",
+    "parcel": "npx parcel index.html --open",
+    "start": "concurrently \"npx parcel index.html --open\" \"npm run riot & npm run parcel\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "parcel-bundler": "^1.12.3",
+    "parcel-plugin-riotjs": "0.0.1",
+    "riot": "^3.13.2",
+    "stylus": "^0.54.5"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  }
+}
