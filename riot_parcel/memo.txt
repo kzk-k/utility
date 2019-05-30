@@ -1,6 +1,35 @@
-npm start
-・concurrentlyで並列実行してる
-（parcel ブラウザオープン, Riotタグ、index.html）
+■ npm start
 
-・ app/ app/は間違いじゃない
+■ package.json
+	concurrentlyで並列実行してる
+		（parcel ブラウザオープン, Riotタグ、index.html）
+	"riot": "npx riot -w src/components/ src/scripts/tags.js"
+		watch => src/components/
+		dist=> src/scripts/tags.js
 
+■ reset入れるには
+・ npm install --save ress
+	index.js内に import 'ress'
+
+■ Materialize入れるには
+・ npm install materialize-css@next
+	index.js内に import 'materialize-css/dist/css/materialize.css';
+	index.js内に import 'materialize-css'
+
+	index.htmlで<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">変えたい
+
+
+■ ディレクトリ構成考え中
+components
+	.tagを入れてく
+
+scripts
+	tag.jsはcomponentsをまとめたもの
+
+styles
+	共通を入れてくつもり
+	ressをindex.jsでimportが良いか、base.stylでimportが良いか
+
+views
+	そのまま
+	ファイル名がページ名

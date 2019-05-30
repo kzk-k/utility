@@ -4,16 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "riot": "npx riot -w app/ app/tags.js",
-    "parcel": "npx parcel index.html --open",
-    "start": "concurrently \"npx parcel index.html --open\" \"npm run riot & npm run parcel\""
+    "riot": "npx riot -w src/components/ src/js/tags.js",
+    "parcel": "npx parcel src/views/index.html --open",
+    "start": "concurrently \"npx parcel src/views/index.html --open\" \"npm run riot & npm run parcel\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "material-design-icons": "^3.0.1",
+    "materialize-css": "^1.0.0-rc.2",
     "parcel-bundler": "^1.12.3",
     "parcel-plugin-riotjs": "0.0.1",
+    "ress": "^1.2.2",
     "riot": "^3.13.2",
     "stylus": "^0.54.5"
   },
