@@ -1,16 +1,26 @@
 <app-footer>
-	<style scoped type="stylus">
-		:scope { display: block }
-		p
-			font-size 100%
-	</style>
-
 	<p>{ opts.message } - { year }</p>
 
-	<script>
-		this.year = (new Date()).getFullYear();
-		this.opts = {
-			message: 'Get Google Crowler Count'
-		}
-	</script>
+
+
+
+
+
+
+<style scoped type="stylus">
+	:scope
+		align-self flex-end
+		width 100%
+		padding 0.8rem 3.2rem
+		text-align right
+		color #fff
+</style>
+
+
+<script>
+	this.year = (new Date()).getFullYear();
+	this.opts = {
+		message: 'Get Google Crowler Count'
+	}
+</script>
 </app-footer>
