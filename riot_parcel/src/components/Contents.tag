@@ -2,10 +2,16 @@
 	<todo></todo>
 	<div class="card">
 		<div class="card-content">
-			<inputUrl></inputUrl>
+			<inputUrl check-input-url="{ urlInputCompleted }"></inputUrl>
 		</div>
 	</div>
-	<datePicker show={ isInputUrl }></datePicker>
+
+	<!--  <div class="card" show="{ showDisplay }">  -->
+	<div class="card">
+		<div class="card-content">
+			<datePicker></datePicker>
+		</div>
+	</div>
 
 	<div class="center-align">
 		<btn-send></btn-send>
@@ -18,12 +24,20 @@
 			padding 3.2rem
 	</style>
 	<script>
-		this.isInputUrl = false;
-		changeInput() {
-			if ($(this).val() !== undefined) {
-				this.isInputUrl = true;
-			}
-		}
+		this.show_flg = false;
 
+		// tag.jsからのパス
+		var export_function = require('./script.js');
+
+		urlInputCompleted() {
+			let inputUrlValue = export_function.getValue('#inputUrl');
+
+			if (inputUrlValue !== '') {
+				this.showDisplay = true;
+			} else {
+				this.showDisplay = false;
+			}
+			this.update();
+		}
 	</script>
 </app-contents>

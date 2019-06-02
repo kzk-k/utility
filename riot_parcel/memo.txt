@@ -23,8 +23,9 @@
 components
 	.tagを入れてく
 
-scripts
+js
 	tag.jsはcomponentsをまとめたもの
+	script.js 共通っぽいの入れてく。読み込みお試し中。
 
 styles
 	共通を入れてくつもり

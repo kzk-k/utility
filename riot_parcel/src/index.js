@@ -1,4 +1,5 @@
 import riot from 'riot'
+
 import './js/tags'
 // リセットcss
 // import 'ress'
@@ -7,5 +8,7 @@ import 'materialize-css'
 import 'material-design-icons'
 import './styles/common.styl'
 
-
-riot.mount('*')
+// riot.mount('*')
+riot.mount('*', {
+    obs: riot.observable()
+})
