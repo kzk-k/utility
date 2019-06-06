@@ -34,3 +34,25 @@ styles
 views
 	そのまま
 	ファイル名がページ名
+
+
+
+
+■つまずき？
+Contents.tag内でTest.tagファイルを読んでも出てこない
+　└ Test.tag内のMyInputを読んでた（ブラウザ上ではmyinputになってた）
+
+
+■悩み？
+・キャメルが変換されるのであればTagファイルは小文字の方が良いのかな？
+
+
+■ES6
+
+・即時関数
+　引数がない場合
+https://iwb.jp/es2015-es6-immediate-function-let/
+｛
+	let test = 1;
+	console.log(test);
+｝

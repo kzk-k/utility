@@ -1,21 +1,23 @@
 <app-contents>
 	<todo></todo>
-	<div class="card">
-		<div class="card-content">
-			<inputUrl check-input-url="{ urlInputCompleted }"></inputUrl>
+	<form action="">
+		<div class="card">
+			<div class="card-content">
+				<inputUrl check-input-url="{ urlInputCompleted }"></inputUrl>
+			</div>
 		</div>
-	</div>
 
-	<!--  <div class="card" show="{ showDisplay }">  -->
-	<div class="card">
-		<div class="card-content">
-			<datePicker></datePicker>
+		<!--  <div class="card" show="{ showDisplay }">  -->
+		<div class="card">
+			<div class="card-content">
+				<datePicker></datePicker>
+			</div>
 		</div>
-	</div>
 
-	<div class="center-align">
-		<btn-send></btn-send>
-	</div>
+		<div class="center-align">
+			<btn-send></btn-send>
+		</div>
+	</form>
 
 	<style scoped type="stylus">
 		:scope

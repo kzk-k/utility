@@ -9,6 +9,4 @@ import 'material-design-icons'
 import './styles/common.styl'
 
 // riot.mount('*')
-riot.mount('*', {
-    obs: riot.observable()
-})
+riot.mount('*')
