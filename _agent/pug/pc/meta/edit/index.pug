@@ -1,0 +1,92 @@
+extends /pc/_components/_template.pug
+
+
+block var
+	- metas = {}
+	- metas.pageName = 'Meta編集'
+	- metas.siteName = '管理画面'
+	- metas.keywords = 'キーワード'
+	- metas.description = 'ディスクリプション'
+
+	- pageName = 'Meta編集'
+block append meta
+	+meta(metas)
+
+block title
+	title #{metas.pageName} | #{metas.siteName}
+block link
+	link(href="./style.css", rel="stylesheet")
+
+
+
+
+
+block pagesContent
+	form(action='#')
+		table.mdl-data-table.mdl-js-data-table.mdl-shadow--2dp
+			tr
+				th id
+				td.mdl-data-table__cell--non-numeric.mdl-color-text--grey-700 1
+			tr
+				th script_id
+				td.mdl-data-table__cell--non-numeric.mdl-color-text--grey-700 25
+			tr
+				th title
+				td.mdl-data-table__cell--non-numeric.mdl-color-text--grey-700
+					.mdl-textfield.mdl-js-textfield
+						input.mdl-textfield__input(type="text", id="textField-title")
+						label.mdl-textfield__label(for="textField-title") タイトル
+			tr
+				th description
+				td.mdl-data-table__cell--non-numeric.mdl-color-text--grey-700
+					.mdl-textfield.mdl-js-textfield
+						textarea.mdl-textfield__input(id="textField-description")
+						label.mdl-textfield__label(for="textField-description") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus perferendis voluptas quo esse ipsum dolorum quam repellat, consectetur repudiandae quidem, soluta iusto omnis est, nobis magni quas aliquid maxime, minus.
+			tr
+				th canonical
+				td.mdl-data-table__cell--non-numeric.mdl-color-text--grey-700 
+					.mdl-textfield.mdl-js-textfield
+						input.mdl-textfield__input(type="text", id="textField-canonical")
+						label.mdl-textfield__label(for="textField-canonical") https://google.com/
+			tr
+				th h1
+				td.mdl-data-table__cell--non-numeric.mdl-color-text--grey-700
+					.mdl-textfield.mdl-js-textfield
+						input.mdl-textfield__input(type="text", id="textField-h1")
+						label.mdl-textfield__label(for="textField-h1") test
+			tr
+				th sub_title
+				td.mdl-data-table__cell--non-numeric.mdl-color-text--grey-700
+					.mdl-textfield.mdl-js-textfield
+						input.mdl-textfield__input(type="text", id="textField-subTitle")
+						label.mdl-textfield__label(for="textField-subTitle")
+			tr
+				th noindex
+				td.mdl-data-table__cell--non-numeric.mdl-color-text--grey-700
+					label.mdl-switch.mdl-js-switch.mdl-js-ripple-effect(for="switch-noIndex")
+						input.mdl-switch__input(type="checkbox", id="switch-noIndex")
+						span.mdl-switch__label
+			tr
+				th nofollow
+				td.mdl-data-table__cell--non-numeric.mdl-color-text--grey-700
+					label.mdl-switch.mdl-js-switch.mdl-js-ripple-effect(for="switch-noFollow")
+						input.mdl-switch__input(type="checkbox", id="switch-noFollow", checked)
+						span.mdl-switch__label
+			tr
+				th noarchive
+				td.mdl-data-table__cell--non-numeric.mdl-color-text--grey-700
+					label.mdl-switch.mdl-js-switch.mdl-js-ripple-effect(for="switch-noArchive")
+						input.mdl-switch__input(type="checkbox", id="switch-noArchive")
+						span.mdl-switch__label
+			tr
+				th prevnext
+				td.mdl-data-table__cell--non-numeric.mdl-color-text--grey-700
+					label.mdl-switch.mdl-js-switch.mdl-js-ripple-effect(for="switch-prevNext")
+						input.mdl-switch__input(type="checkbox", id="switch-prevNext", checked)
+						span.mdl-switch__label
+		button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-color--teal-300.mdl-color-text--white.btn-confirm(type='submit')
+			| 確認
+
+
+
+block End_pagesContent

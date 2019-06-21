@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>ログイン | 管理画面</title>
+				<meta name="description" content="ディスクリプション">
+				<meta name="keywords" content="キーワード">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="format-detection" content="telephone=no"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-blue.min.css">
+		<link href="./style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="f-login mdl-layout__container mdl-card">
+			<div class="mdl-layout__header"><i class="material-icons">lock_open</i>
+				<h1 class="mdl-layout__title mdl-typography--headline">管理画面</h1>
+			</div>
+			<form action="#">
+				<div class="mdl-layout__content">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" id="LoginID" type="text">
+						<label class="mdl-textfield__label" for="LoginID">ログインID</label>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" id="Password" type="text">
+						<label class="mdl-textfield__label" for="Password">パスワード</label>
+					</div>
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">ログイン</button>
+				</div>
+			</form>
+		</div>
+		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+	</body>
+</html>

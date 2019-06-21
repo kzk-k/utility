@@ -1,0 +1,63 @@
+@import '../partial/_common'
+
+.mdl-button--accent.mdl-button--accent.mdl-button--raised
+	padding 0 32px
+	font-size 16px
+.searchModule
+	margin-top 32px
+.mdl-textfield__input
+	line-height 1.5
+
+.cardModule
+	overflow-y hidden
+	min-height 80px
+	max-height 152px
+	+ .cardModule
+		margin-top 16px
+
+.mdl-card
+	width 100%
+	min-height auto
+	height 100%
+	background-color transparent
+.mdl-card__supporting-text
+	width 100%
+.mdl-card__supporting-text-row
+	display flex
+	align-items center
+	flex-wrap wrap
+	font-size 14px
+	+ .mdl-card__supporting-text-row
+		border-top 1px solid rgba(0,0,0,.12)
+.mdl-card__supporting-text-th,
+.mdl-card__supporting-text-td
+	padding 12px 18px
+	line-height 1.2
+
+.mdl-card__supporting-text-th
+	width 25%
+	font-weight bold
+.mdl-card__supporting-text-td
+	width 75%
+	overflow-x hidden
+	white-space nowrap
+	text-overflow ellipsis
+
+.cardModule
+	position relative
+	width 100%
+	transition all 0.5s
+	cursor pointer
+	.mdl-grid
+		background-color gray1
+		&:hover
+			background-color #fff
+	.btn
+		position relative
+		background-color gray5
+	.material-icons
+		position absolute
+		top 50%
+		left 50%
+		transform translate(-50%, -50%)
+		font-size 32px

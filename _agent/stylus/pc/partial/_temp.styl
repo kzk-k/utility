@@ -1,0 +1,63 @@
+/* ============================================================================
+
+		header
+
+============================================================================ */
+path = "/pc/common/img/"
+
+.mdl-layout
+	min-height 100vh
+
+.l-mainContainer
+	padding 40px
+	color #fff
+
+.mdl-layout__drawer
+	transform translateX(0)
+	background-color gray26
+
+.mdl-layout__drawer__header
+	display flex
+	align-items center
+	flex-direction column
+	justify-content center
+	height 152px
+	padding 16px
+	background-color gray28
+
+.mdl-layout__drawer__header__title
+	margin-top 16px
+	font-size 14px
+	font-weight normal
+	color gray1
+
+.mdl-navigation__link
+	{fontFamilyBlock}
+	color gray2 !important
+	&:hover
+		background-color gray29 !important
+	.material-icons
+		margin-right 32px
+		vertical-align middle
+		font-size 24px
+		color gray2 !important
+
+.mdl-layout__header-row
+	background-color gray0
+
+.l-mainContainer
+	background-color gray0
+
+// mediaQuery Reset
+@media screen and (max-width: 1024px)
+	.mdl-layout--fixed-drawer > .mdl-layout__content
+		margin-left 240px
+	.mdl-layout__header-row
+		padding-left 40px
+
+.mdl-layout-title
+	{fontFamilyBlock}
+	letter-spacing 0.02rem
+.mdl-button
+	{fontFamilyBlock}
+	letter-spacing 0.02rem

@@ -1,0 +1,40 @@
+extends /pc/_components/_template.pug
+
+
+block var
+	- metas = {}
+	- metas.pageName = 'ログイン'
+	- metas.siteName = '管理画面'
+	- metas.keywords = 'キーワード'
+	- metas.description = 'ディスクリプション'
+
+	- pageName = 'login'
+block append meta
+	+meta(metas)
+
+block title
+	title #{metas.pageName} | #{metas.siteName}
+block link
+	link(href="./style.css", rel="stylesheet")
+
+
+
+
+
+block pagesContent
+	.f-login.mdl-layout__container.mdl-card
+		.mdl-layout__header
+			i.material-icons lock_open
+			h1.mdl-layout__title.mdl-typography--headline 管理画面
+		form(action='#')
+			.mdl-layout__content
+				.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+					input#LoginID.mdl-textfield__input(type='text')
+					label.mdl-textfield__label(for='LoginID') ログインID
+				.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+					input#Password.mdl-textfield__input(type='text')
+					label.mdl-textfield__label(for='Password') パスワード
+				button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent(type='submit')
+					| ログイン
+
+block End_pagesContent

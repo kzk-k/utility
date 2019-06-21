@@ -1,0 +1,86 @@
+/* ============================================================================
+
+		header
+
+============================================================================ */
+.mdl-layout {
+	min-height: 100vh;
+}
+
+.l-mainContainer {
+	padding: 40px;
+	color: #fff;
+}
+
+.mdl-layout__drawer {
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+	background-color: gray26;
+}
+
+.mdl-layout__drawer__header {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	height: 152px;
+	padding: 16px;
+	background-color: gray28;
+}
+
+.mdl-layout__drawer__header__title {
+	margin-top: 16px;
+	font-size: 14px;
+	font-weight: normal;
+	color: gray1;
+}
+
+.mdl-navigation__link {
+	color: gray2 !important;
+}
+
+.mdl-navigation__link:hover {
+	background-color: gray29 !important;
+}
+
+.mdl-navigation__link .material-icons {
+	margin-right: 32px;
+	vertical-align: middle;
+	font-size: 24px;
+	color: gray2 !important;
+}
+
+.mdl-layout__header-row {
+	background-color: gray0;
+}
+
+.l-mainContainer {
+	background-color: gray0;
+}
+
+@media screen and (max-width: 1024px) {
+	.mdl-layout--fixed-drawer > .mdl-layout__content {
+		margin-left: 240px;
+	}
+
+	.mdl-layout__header-row {
+		padding-left: 40px;
+	}
+}
+
+.mdl-layout-title {
+	letter-spacing: 0.02rem;
+}
+
+.mdl-button {
+	letter-spacing: 0.02rem;
+}
