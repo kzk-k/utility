@@ -7,6 +7,7 @@
 			<li class="collection-item">・入力欄</li>
 			<li class="collection-item">・日別・月別の指定 ⇒それぞれ期間指定ができる</li>
 			<li class="collection-item">・確定ボタン</li>
+			<li class="collection-item">・URL入力欄を10件まで増やせるように</li>
 			<li class="collection-item">・件数を表示する箇所</li>
 			<li class="collection-item">・CSV出力ボタン</li>
 		</ul>

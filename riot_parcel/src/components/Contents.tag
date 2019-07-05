@@ -22,8 +22,9 @@
 	<style scoped type="stylus">
 		:scope
 			display block
-			flex 1
 			padding 3.2rem
+			@media screen and (min-width: 992px)
+				width 1000px
 	</style>
 	<script>
 		this.show_flg = false;
