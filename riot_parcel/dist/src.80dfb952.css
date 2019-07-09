@@ -9087,6 +9087,12 @@ body {
 .myBtnColor:hover {
   background-color: #e91e63;
 }
+app-contents {
+  margin: auto;
+}
+app-footer {
+  text-align: center;
+}
 .u-clearfix:before,
 .u-clearfix:after {
   content: "";

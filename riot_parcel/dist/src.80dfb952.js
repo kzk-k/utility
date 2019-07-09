@@ -3467,7 +3467,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 });
 },{}],"../js/script.js":[function(require,module,exports) {
 exports.getValue = function (element) {
-  var value = document.querySelector(element).value; // console.log(value)
+  var value = document.querySelector(element).value; // console.log(value);
 
   return value;
 };
@@ -3482,54 +3482,61 @@ _riot.default.tag2('app', '<app-contents></app-contents> <app-footer></app-foote
 
 _riot.default.tag2('btn-send', '<button disabled class="myBtnColor waves-effect waves-light btn btn-large" type="submit"> <i class="material-icons right">send</i>送信 </button>', 'btn-send,[data-is="btn-send"]{ display: block; } btn-send .btn-large,[data-is="btn-send"] .btn-large{ padding: 0 56px; font-size: 1.2rem; } btn-send .btn-large i,[data-is="btn-send"] .btn-large i{ font-size: 1.3rem; }', '', function (opts) {});
 
-_riot.default.tag2('app-contents', '<todo></todo> <div class="card"> <div class="card-content"> <inputurl check-input-url="{urlInputCompleted}"></inputUrl> </div> </div> <div class="card"> <div class="card-content"> <datepicker></datePicker> </div> </div> <div class="center-align"> <btn-send></btn-send> </div>', 'app-contents,[data-is="app-contents"]{ display: block; flex: 1; padding: 3.2rem; }', '', function (opts) {
-  this.show_flg = false;
+_riot.default.tag2('app-contents', '<todo></todo> <form action=""> <div class="card"> <div class="card-content"> <inputurl></inputUrl> </div> </div> <div class="card"> <div class="card-content"> <datepicker></datePicker> </div> </div> <div class="center-align"> <btn-send></btn-send> </div> </form>', 'app-contents,[data-is="app-contents"]{ display: block; padding: 3.2rem; } @media screen and (min-width: 992px) { app-contents,[data-is="app-contents"]{ width: 1000px; } }', '', function (opts) {});
 
-  var export_function = require('./script.js');
-
-  this.urlInputCompleted = function () {
-    var inputUrlValue = export_function.getValue('#inputUrl');
-
-    if (inputUrlValue !== '') {
-      this.showDisplay = true;
-    } else {
-      this.showDisplay = false;
+_riot.default.tag2('datepicker', '<div class="input-field"> <input id="datepickerId-1" type="text" class="datepicker datepicker1"> <label ref="refTest" for="datepickerId-1" oninput="{checkInputDatepicker}">期間指定</label> </div> <div class="input-field"> <input id="datepickerId-2" type="text" class="datepicker datepicker2" riot-value="{today}"> <label for="datepickerId-2">期間指定</label> </div>', 'datepicker .date-text::after,[data-is="datepicker"] .date-text::after{ content: \'日\'; } datepicker { display: flex; justify-content: space-between; } datepicker .input-field,[data-is="datepicker"] .input-field{ width: 48.5%; }', '', function (opts) {
+  {
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = ('0' + (date.getMonth() + 1)).slice(-2);
+    var day = ('0' + date.getDate()).slice(-2);
+    this.today = year + '-' + month + '-' + day;
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    {
+      var elments = document.querySelectorAll('.datepicker');
+      var today = new Date();
+      var options = {
+        autoClose: true,
+        setDefaultDate: true,
+        maxDate: today,
+        selectYears: 1,
+        endRange: today,
+        showClearBtn: true,
+        i18n: {
+          months: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+          monthsShort: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+          weekdaysAbbrev: ["日", "月", "火", "水", "木", "金", "土"]
+        },
+        format: "yyyy-mm-dd"
+      };
+      var instances = M.Datepicker.init(elments, options);
     }
-
-    this.update();
-  }.bind(this);
-});
-
-_riot.default.tag2('datepicker', '<div class="input-field"> <input id="datepickerId-1" type="text" class="datepicker datepicker1" oninput="{checkInputDatepicker}"> <label for="datepickerId-1">期間指定</label> {test.value} </div> <div class="input-field"> <input id="datepickerId-2" type="text" class="datepicker datepicker2"> <label for="datepickerId-2">期間指定</label> </div>', 'datepicker .date-text::after,[data-is="datepicker"] .date-text::after{ content: \'日\'; }', '', function (opts) {
-  $(document).ready(function () {
-    var today = new Date();
-    $('.datepicker').datepicker({
-      setDefaultDate: true,
-      maxDate: today,
-      endRange: today,
-      showClearBtn: true,
-      i18n: {
-        months: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
-        monthsShort: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
-        weekdaysAbbrev: ["日", "月", "火", "水", "木", "金", "土"]
-      },
-      format: "yyyy-m-d"
-    });
   });
-
-  this.checkInputDatepicker = function () {}.bind(this);
 });
 
-_riot.default.tag2('app-footer', '<p>{opts.message} - {year}</p>', 'app-footer,[data-is="app-footer"]{ align-self: flex-end; width: 100%; padding: 0.8rem 3.2rem; text-align: right; color: #fff; }', '', function (opts) {
+_riot.default.tag2('app-footer', '<p>{opts.message} - {year}</p>', 'app-footer,[data-is="app-footer"]{ align-self: flex-end; width: 100%; padding: 0.8rem 3.2rem; color: #fff; } @media screen and (min-width: 992px) { app-footer,[data-is="app-footer"]{ width: 1000px; margin: 0 auto; text-align: right; } }', '', function (opts) {
   this.year = new Date().getFullYear();
   this.opts = {
     message: 'Get Google Crowler Count'
   };
 });
 
-_riot.default.tag2('inputurl', '<div class="input-field"> <i class="material-icons prefix">textsms</i> <input type="text" id="inputUrl" oninput="{opts.checkInputUrl}"> <label for="inputUrl">URLを入力</label> </div> </div>', 'inputurl,[data-is="inputurl"]{ display: block; flex: 1; } inputurl .material-icons,[data-is="inputurl"] .material-icons{ margin-top: 0.5rem; } inputurl label,[data-is="inputurl"] label{ height: 2rem; }', '', function (opts) {});
+_riot.default.tag2('inputurl', '<div class="input-field"> <i class="material-icons prefix">textsms</i> <input type="text" id="inputUrl" ref="inputUrl" oninput="{urlInputCompleted}"> <label for="inputUrl">URLを入力</label> </div>', 'inputurl,[data-is="inputurl"]{ display: block; flex: 1; } inputurl .material-icons,[data-is="inputurl"] .material-icons{ margin-top: 0.5rem; } inputurl label,[data-is="inputurl"] label{ height: 2rem; }', '', function (opts) {
+  var export_function = require('./script.js');
 
-_riot.default.tag2('todo', '<div class="card blue-grey darken-1"> <div class="card-content white-text"> <span class="card-title">つくるもの</span> <p>各媒体のURLを入力したら、日毎または月別でGoogleのクローラーがまわってきた件数を取得するツール</p> <ul class="collection blue-grey-text text-darken-4"> <li class="collection-item">・入力欄</li> <li class="collection-item">・日別・月別の指定 ⇒それぞれ期間指定ができる</li> <li class="collection-item">・確定ボタン</li> <li class="collection-item">・件数を表示する箇所</li> <li class="collection-item">・CSV出力ボタン</li> </ul> </div> </div>', 'todo .collection-item:nth-child(-n+3),[data-is="todo"] .collection-item:nth-child(-n+3){ text-decoration: line-through; }', '', function (opts) {});
+  this.urlInputCompleted = function () {
+    var inputUrlValue = export_function.getValue('#inputUrl');
+
+    if (inputUrlValue !== '') {
+      console.log('test');
+    }
+
+    this.update();
+  }.bind(this);
+});
+
+_riot.default.tag2('todo', '<div class="card blue-grey darken-1"> <div class="card-content white-text"> <span class="card-title">つくるもの</span> <p>各媒体のURLを入力したら、日毎または月別でGoogleのクローラーがまわってきた件数を取得するツール</p> <ul class="collection blue-grey-text text-darken-4"> <li class="collection-item">・入力欄</li> <li class="collection-item">・日別・月別の指定 ⇒それぞれ期間指定ができる</li> <li class="collection-item">・確定ボタン</li> <li class="collection-item">・URL入力欄を10件まで増やせるように</li> <li class="collection-item">・件数を表示する箇所</li> <li class="collection-item">・CSV出力ボタン</li> </ul> </div> </div>', 'todo .collection-item:nth-child(-n+3),[data-is="todo"] .collection-item:nth-child(-n+3){ text-decoration: line-through; }', '', function (opts) {});
 },{"riot":"../../node_modules/riot/riot.js","./script.js":"../js/script.js"}],"../../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
@@ -15968,7 +15975,7 @@ $jscomp.polyfill = function (e, r, p, m) {
 })(cash, M.anime);
 
 },{}],"../../node_modules/material-design-icons/index.js":[function(require,module,exports) {
-var __dirname = "/Users/kawanokazuki/study/utility/riot_parcel/node_modules/material-design-icons";
+var __dirname = "D:\\project\\utility\\riot_parcel\\node_modules\\material-design-icons";
 module.exports = {
   STATIC_PATH: __dirname,
 };
@@ -15998,9 +16005,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // リセットcss
 // import 'ress'
 // riot.mount('*')
-_riot.default.mount('*', {
-  obs: _riot.default.observable()
-});
+_riot.default.mount('*');
 },{"riot":"../../node_modules/riot/riot.js","./js/tags":"../js/tags.js","materialize-css/dist/css/materialize.css":"../../node_modules/materialize-css/dist/css/materialize.css","materialize-css":"../../node_modules/materialize-css/dist/js/materialize.js","material-design-icons":"../../node_modules/material-design-icons/index.js","./styles/common.styl":"../styles/common.styl"}],"../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -16029,7 +16034,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55160" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55489" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
